@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* width, height: chỉ số dài rộng của thẻ HTML  */
+        /* margin: chỉ số khoảng cách giữa các thẻ; cách tính: trên phải dưới trái  */
+        /* màu sắc: color  */
+        /* đường viền: border  */
+        /* vị trí content: align  */
+        /* vị trí phần tử (element): position  */
+        table{
+            width: 500px;
+            height: 230px;
+            margin: 5px 10px 10px 10px;
+            background-color: white;
+        }
+        form{
+            border: 1px solid white;
+            width: 520px;
+            height: 245px;
+            background-color: aqua;
+        }
+        button{
+            margin-top: 10px;
+        }
+        .blue {
+            color: blue;
+        }
+        .orange {
+            color: orange;
+        }
+        h3 {
+            margin-top: 5px;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- mỗi 1 thành phần HTML được gọi là 1 element trên trình duyệt 
+    mỗi element thường có cấu trúc hình chữ nhật và tuân thủ theo mô hình box model của CSS
+    4 cấu trúc trong box model:
+        - content: nội dung của thẻ html
+        - padding: khoảng cách giữa content và đường viền của thẻ
+        - border: đường viền của thẻ html, có độ dày tùy chọn
+        - margin: khoảng cách giữa 2 đường viền của 2 thành phần chứa nhau hoặc nằm cạnh nhau-->
+    <form >
+        <table>
+            <tr>
+                <!-- thuộc tính colspan: là thuộc tính để hợp nhất các ô trên cùng 1 hàng thành 1 ô -->
+                <td colspan="4">
+                    <h3>Sở Thích Của Bạn</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="blue">Họ và Tên</td>
+                <td colspan="3"><input type="text" name="yourname" size="32"></td>
+            </tr>
+            <tr>
+                <td class="blue">Email</td>
+                <td colspan="3"><input type="text" name="email" size="23"></td>
+            </tr>
+            <tr>
+                <td class="blue">Sở Thích</td>
+                <td class="orange"><input type="checkbox" name="hobby">Thể Thao</td>
+                <td class="orange"><input type="checkbox" name="hobby">Âm Nhạc</td>
+                <td class="orange"><input type="checkbox" name="hobby">Đọc Sách</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="orange"><input type="checkbox" name="hobby">lướt Web</td>
+                <td class="orange"><input type="checkbox" name="hobby">Chơi game</td>
+                <td class="orange"><input type="checkbox" name="hobby">Điện Ảnh</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="orange" colspan="3"><input type="checkbox" name="hobby">Du Lịch</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3">
+                    <button type="submit">Gửi thông tin</button>
+                    <button type="reset">Nhập lại</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

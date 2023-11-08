@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 500px;
+            height: 200px;
+            margin: 5px 10px 10px 10px;
+            background-color: yellow;
+        }
+        form{
+            border: 1px solid white;
+            width: 630px;
+            height: 300px;
+            
+        }
+        button{
+            margin-top: 10px;
+        }
+        .blue {
+            color: blue;
+        }
+        .orange {
+            color: orange;
+        }
+        h3 {
+            margin-top: 5px;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            padding: 3px;
+        }
+            
+    
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td colspan="3">
+                    <h2>Đăng ký Học Viên</h2>
+                </td>
+            </tr>
+            <tr>
+                <td class="blue">Họ và tên</td>
+                <td colspan="2"><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="blue">Ngày sinh</td>
+                <td colspan="2"><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="blue">Giới tính</td>
+                <td><input type="radio" name="gioitinh">Nam</td>
+                <td ><input type="radio" name="gioitinh" >Nữ</td>
+            </tr>
+            <tr>
+                <td class="blue">Địa chỉ</td>
+                <td colspan="2" id="dc"><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="blue">Lớp</td>
+                <td>
+                    <select>
+                        <option value="1">-Chọn lớp-</option>
+                        <option value="2">Lớp 1</option>
+                        <option value="3">Lớp 2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="blue">Email</td>
+                <td colspan="2"><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="blue">Điện Thoại</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" >Đăng Ký</button></td>
+                <td ><button type="reset" >Nhập lại</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
