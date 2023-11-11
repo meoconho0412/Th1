@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let soTienVay = prompt("Nhập số tiền vay:");
+        let laiSuat = prompt("Nhập lãi suất (%):");
+        let soNam = prompt("Nhập số năm:");
+        soTienVay = parseFloat(soTienVay.replace(",", "."));
+        laiSuat = parseFloat(laiSuat.replace(",", "."));
+        soNam = parseFloat(soNam.replace(",", "."));
+        let laiDon = (soTienVay * laiSuat * soNam) / 100;
+        let tongSoTien = soTienVay + laiDon;
+        alert("Số tiền phải trả sau " + soNam + " năm là: " + tongSoTien.toFixed(2));
+
+    </script>
+</body>
+</html>
