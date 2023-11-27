@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <p>TH1</p>
+    <input type="text" id="fruit">
+    <button onclick="b3()">Bắt đầu</button>
+    <p id="result"></p>
+    <hr>
+    <hr>
+    <p>TH2</p>
+    <input type="text" id="demo">
+    <button onclick="th2()">Bắt đầu</button>
+    <p id="result1"></p>
+    <hr>
+</body>
+<script>
+    function b3() {
+    let fruit = document.getElementById("fruit").value 
+    switch (fruit) {
+    case 'Edge':
+    document.getElementById("result").innerHTML ="You've got the Edge!";
+        break;
+    case 'Chrome':
+    case 'Firefox':
+    case 'Safari':
+    case 'Opera':
+    document.getElementById("result").innerHTML ="Okay we support these browsers too";
+        break;
+    default:
+    document.getElementById("result").innerHTML = 'We hope that this page looks ok!';
+}
+}
+function th2() {
+    let a = document.getElementById("demo").value;
+    switch (a) {
+    case 0:
+    document.getElementById("result1").innerHTML ="0";
+        break;
+    case 1:
+    document.getElementById("result1").innerHTML ="1";
+        break;
+    case 2:
+    case 3:
+    document.getElementById("result1").innerHTML ="2,3";
+        break;
+}
+}
+</script>
+</html>
