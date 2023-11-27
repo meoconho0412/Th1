@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <p>Giá hoa quả</p>
+    <input type="text" id="fruit">
+    <button onclick="b3()">Tính giá</button>
+    <p id="result"></p>
+    <hr>
+</body>
+<script>
+    function b3() {
+        let fruit = document.getElementById("fruit").value 
+        let price
+        switch (fruit) {
+            // gộp case của cú pháp switch case, cho phép viết nhiều case có chung tập lệnh thực thi
+            // mà không cần viết đi viết lại tập lệnh nhiều lần
+            case "Ổi":
+            case "Dưa hấu":
+                price = "20000VND/kg"
+                break;
+            case "Táo":
+            case "Xoài":
+                price = "30000VND/kg"
+                break;
+            case "Cam":
+            case "Chôm chôm":
+                price = "40000VND/kg"
+                break;
+            case "Măng cụt":
+                price = "50000VND/kg"
+                break;
+            default:
+                price = "Nhập tên quả không chính xác!"
+        }
+        document.getElementById("result").innerHTML = price
+    }
+</script>
+</html>
