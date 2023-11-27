@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <p>Môn Toán</p>
+    <input type="text" id="math">
+    <p>Môn Văn</p>
+    <input type="text" id="lit">
+    <p>Môn Anh</p>
+    <input type="text" id="eng">
+    <br>
+    <br>
+    <label for="kv">Khu vực</label>
+    <select id="kv">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2-NT</option>
+        <option value="0.25">KV2</option>
+        <option value="0">KV3</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="calPoint()">Tính điểm</button>
+    <h3 id="result"></h3>
+</body>
+<script>
+    function calPoint() {
+        let math = +document.getElementById("math").value 
+        let lit = +document.getElementById("lit").value 
+        let eng = +document.getElementById("eng").value 
+        let kv = +document.getElementById("kv").value 
+        if (math > 10 || math < 0 || lit > 10 || lit < 0 || eng > 10 || eng < 0) {
+            document.getElementById("result").innerHTML = "Nhập điểm không chính xác!"
+        } else {
+            let point = math + lit + eng + kv
+            document.getElementById("result").innerHTML = "Tổng điểm đại học của bạn là: " + point
+        } 
+        document.getElementById("result").style.color = "red"
+    }
+</script>
+</html>
