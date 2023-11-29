@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Loops</h2>
+    <p id="demo"></p>
+    <label for="total">Nhập số</label>
+    <input type="text" id="total">
+    <button onclick="tinhTong()">Tính tổng</button>
+    <p id="demo1"></p>
+    <script>
+    let text = "";
+    let i;
+    for (i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+    function tinhTong() {
+            let soNhap = document.getElementById("total").value;
+            let tong = 0;
+
+            for (let j = 1; j <= soNhap; j++) {
+                tong = tong + j;
+            }
+
+            document.getElementById("demo1").innerHTML = "Tổng là: " + tong;
+        }
+    </script>
+</body>
+
+</html>
