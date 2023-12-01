@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guessing Game</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 50px;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="startGame()">Chơi</button>
+
+  <script>
+    function startGame() {
+      do {
+        // Bước 1: Nhập vào số lớn nhất
+        var maxNumber = parseInt(prompt("Nhập vào số lớn nhất bạn muốn đoán:"));
+
+        // Kiểm tra xem maxNumber có phải là số hay không
+        if (isNaN(maxNumber)) {
+          alert("Vui lòng nhập một số hợp lệ.");
+          continue;
+        }
+
+        // Bước 2: Tạo số ngẫu nhiên trong khoảng từ 1 đến maxNumber
+        var randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+
+        var userGuess;
+        var attempts = 0;
+
+        do {
+          // Bước 3: Nhập giá trị đoán
+          userGuess = parseInt(prompt("Nhập giá trị bạn đoán:"));
+
+          // Kiểm tra xem userGuess có phải là số hay không
+          if (isNaN(userGuess)) {
+            alert("Vui lòng nhập một số hợp lệ.");
+            continue;
+          }
+
+          // Bước 4: So sánh và hiển thị thông báo
+          attempts++;
+          if (userGuess === randomNumber) {
+            alert("Chúc mừng! Bạn đã đoán đúng sau " + attempts + " lần đoán.");
+            break;
+          } else {
+            var message = userGuess > randomNumber ? "Lớn hơn" : "Nhỏ hơn";
+            var continueGame = confirm("Số bạn đoán " + message + " số đúng. Bạn muốn chơi lại không?");
+            if (!continueGame) {
+              break;
+            }
+          }
+        } while (true);
+
+      } while (confirm("Bạn muốn chơi lại không?"));
+    }
+  </script>
+</body>
+</html>
