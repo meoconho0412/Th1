@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Sequence</title>
+</head>
+<body>
+
+  <script>
+    function generateFibonacci(n) {
+      var fibonacciSequence = [];
+      var i = 0;
+
+      while (i < n) {
+        if (i <= 1) {
+          fibonacciSequence.push(i);
+        } else {
+          var nextNumber = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+          fibonacciSequence.push(nextNumber);
+        }
+        i++;
+      }
+
+      return fibonacciSequence;
+    }
+
+    function printFibonacci() {
+      var n = parseInt(prompt("Nhập vào số nguyên dương n:"));
+
+      // Kiểm tra xem n có phải là số nguyên dương hay không
+      if (isNaN(n) || n <= 0) {
+        alert("Vui lòng nhập một số nguyên dương hợp lệ.");
+        return;
+      }
+
+      var fibonacciNumbers = generateFibonacci(n);
+      alert("Dãy Fibonacci gồm " + n + " số là: " + fibonacciNumbers.join(", "));
+    }
+
+    // Gọi hàm khi trang web được tải
+    printFibonacci();
+  </script>
+</body>
+</html>
