@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // nhập số
+    let number = +prompt("Nhập số: ")
+    // chuyển số thành chuỗi
+    let str = number.toString()
+    // cắt chuỗi với điều kiện chỉ định, kết quả là 1 mảng ký tự
+    let arr = str.split("")
+    // đảo ngược mảng
+    arr.reverse()
+    // join các phần tử trong mảng thành chuỗi, chuyển lại về thành số
+    console.log(+(arr.join("")));
+    console.log(typeof(+(arr.join(""))));
+</script>
+</html>
