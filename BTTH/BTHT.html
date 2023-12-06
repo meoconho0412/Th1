@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="bai1()">Bai 1</button>
+    <p id="bai1"></p>
+    <button onclick="bai2()">Bai 2</button>
+    <p id="bai2"></p>
+    <button onclick="bai345()">Bai 345</button>
+    <p id="bai345"></p>
+    <button onclick="bai6()">Bai 6</button>
+    <p id="bai6"></p>
+    <button>Bai 7</button>
+    <div id="bai7"></div>
+</body>
+<script>
+    function bai1() {
+        let data = "" 
+        for (let i = 1; i < 100; i++) {
+            if (i === 99) {
+            alert("Hoan Thanh")
+            } else {
+                data += i + ("-")
+            }
+        }
+        document.getElementById('bai1').innerHTML = data
+    }   
+   
+
+    function bai2() {
+        let temparature 
+        do {
+            temparature = +prompt("nhap nhiet do : ")
+            if (temparature > 100) {
+                alert("Giam nhiet do")  
+            } else if (temparature < 20){
+                alert("tang nhiet do")
+            } else {
+                alert("nhiet do la : " + temparature)
+            }
+        } while (temparature > 100 || temparature < 20)
+
+    }
+    function bai345() {
+        let numb1 = 1
+        let numb2 = 1
+        let count = 0 
+        let sum = 0 
+        while (count < 20) {
+        console.log(numb1);
+        let temp = numb2
+        numb1 = numb2 + numb1
+        numb1 = temp
+        count++
+        }
+        //dsd
+        let numb3 = 1
+        let numb4 = 1
+        while (true) {
+        if (numb3 % 5 === 0 ){
+           break
+        }
+        let temp = numb4
+        numb3 = numb4 + numb3
+        numb3 = temp
+        
+        }
+        document.getElementById("bai345").innerHTML = "Tổng của 20 số là :" + sum
+        + "<br> số chia hết cho 5 đầu tiên " + numb3
+    }
+
+    function bai6() {
+        let sum = 0 
+        for(let i = 1; i <= 30; i++) {
+            sum += i*7
+        }
+        alert("tổng của 30 số đầu chia hết cho 7 là :" + sum)
+    }
+
+    function bai7() {
+        for(let i = 0; i < 100; i++) {
+            if (i % 3 ===0 && i % 5 === 0) {
+                console.log("Fizzbuzz")
+            } else if (i % 3 === 0 ) {
+                console.log("Fizz")
+            } else if (i % 5 === 0) {
+                console.log("buzz")
+            } else {
+                console.log(i)
+            }
+        }
+    }
+</script>
+</html>
