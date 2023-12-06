@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 { 
+            text-align: center;
+        }
+        table {
+            width: 800px;
+            margin: auto;
+        }
+        table, tr, td {
+            border: 1px solid;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="ketqua"></div>
+</body>
+<script>
+    let data = "<h2> Bảng cửu trương</h2>"
+    data += "<table>"
+    for (let i= 1; i<10; i++ ) {
+        data += "<tr>"
+        for (let j = 2; j < 10; j++) {
+            data += "<td>"
+            data += j + "x" + i + "=" + (j*i)
+            data += "</td>"
+        }
+        data += "</tr>"
+    }
+    data += "</table>"
+    console.log(data)
+    document.getElementById("ketqua").innerHTML = data
+</script>
+</html>
