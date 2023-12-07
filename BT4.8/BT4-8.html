@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- xử lý nhanh tam giác lệch phải với CSS -->
+    <!-- <style>
+        #t1, #t2 {
+            text-align: right;
+            width: 50px;
+        }
+    </style> -->
+    <style>
+        div {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="t1"></div>
+    <div id="t2"></div>
+    <div id="t3"></div>
+    <div id="t4"></div>
+</body>
+<script>
+    let t1 = ""
+    for(let i = 0; i < 5; i++) {
+        for(let j = 0; j <= i; j++) {
+            t1 += "*"
+        }
+        t1 += "<br>"
+    }
+    document.getElementById("t1").innerHTML = t1
+
+    let t2 = "---------<br>"
+    for(let i = 5; i > 0; i--) {
+        for(let j = 1; j <= i; j++) {
+            t2 += "*"
+        }
+        t2 += "<br>"
+    }
+    document.getElementById("t2").innerHTML = t2
+
+    let t3 = "---------<br>"
+    // HTMLEntity: &nbsp <=> 1 cách; &ensp <=> 2 cách; &emsp <=> 4 cách
+    for(let i = 0; i < 5; i++) {
+        for(let j = 4; j > i; j--) {
+            t3 += "&ensp;"
+        }
+        for(let j = 0; j <= i; j++) {
+            t3 += "*"
+        }
+        t3 += "<br>"
+    }
+    document.getElementById("t3").innerHTML = t3
+
+    let t4 = "---------<br>"
+    for(let i = 5; i > 0; i--) {
+        for(let j = 5; j > i; j--) {
+            t4 += "&ensp;"
+        }
+        for(let j = 1; j <= i; j++) {
+            t4 += "*"
+        }
+        
+        t4 += "<br>"
+    }
+    document.getElementById("t4").innerHTML = t4
+</script>
+</html>
