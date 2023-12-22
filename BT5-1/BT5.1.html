@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="bai1()">Bài 1</button>
+    <button onclick="bai2()">bài 2</button>
+    <button onclick="bai3()">Bài 3</button>
+</body>
+<script>
+    function bai1() {
+        let myColor = ['Red', 'Green', 'White', 'Black']
+        console.log(myColor.toString())
+    }
+    //-------------
+    function bai2() {
+        let num = window.prompt()
+        let str = num.toString()
+        let result = [str[0]]
+        for (let i = 0; i < str.length; i++) {
+            if((str[i-1] % 2 === 0 ) && (str[i] % 2 === 0)) {
+                result.push(str[i])
+                result.push('-')
+            } else {
+                result.push(str[i])
+            }
+            console.log(result.join(""))
+        }
+
+    }
+    //------------
+    function bai3() {
+        let str = prompt('nhập 1 chuỗi : ')
+        console.log(str)
+        let arr = str.split("")
+        for (let i = 0; i < arr.length ; i++) {
+            if (arr[i].toUpperCase() === arr[i]) {
+                arr[i] = arr[i].toLowerCase()
+            } else {
+                arr[i] = arr[i].toUpperCase()
+            }
+        }
+        console.log(arr.join(""))
+    }
+</script>
+</html>
