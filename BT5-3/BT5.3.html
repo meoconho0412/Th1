@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr,td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+        td.x {
+            background-color: red;
+        }
+        td.o {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="board"></div>
+    <br>
+    <button onclick="createBoard()">Play</button>
+</body>
+<script>
+    let value = "x"
+    function changeValue(i,j) {
+        let id = "" +i+j
+        document.getElementById(id).innerHTML = value
+        if (value === "x") {
+            value = "o"
+        } else {
+            value = "x"
+        }
+    }
+    function createBoard() {
+        let cell = +prompt("Nhập số ô bạn muón : ")
+        let data = "<table>"
+        for (let i = 0 ; i < cell ; i++) {
+            data += "<tr>"
+            for (let j = 0 ; j < cell ; j++) {
+                data += "<td id='" + i + j + "' onclick='changeValue(" + i + "," + j +")'></td>"
+            }
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("board").innerHTML = data
+    }
+</script>
+</html>
