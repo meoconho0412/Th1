@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="value">
+    <button onclick="calculator('Foot')">FootToMeter</button>
+    <button onclick="calculator('Meter')">MeterToFoot</button>
+</body>
+<script>
+    function footToMeter() {
+        let foot = document.getElementById("value").value
+        if (isNaN(foot)) {
+            document.getElementById('result').innerHTML = "vui long nhập số !"
+            document.getElementById('value').value = ""
+        } else {
+            let meter = foot*0.305
+            document.getElementById("result").innerHTML = "Result : " + meter + " m"
+        }
+    }
+    function metetFoot(){
+        let meter = document.getElementById("value").value
+        if (isNaN(meter)) {
+            document.getElementById('result').innerHTML = "vui long nhập số !"
+            document.getElementById('value').value = ""
+        } else {
+            let foot = meter*3.297 
+            document.getElementById("result").innerHTML = "Result: " + foot
+        }
+    }
+    // cách thứ 2
+    function calculator(type) {
+        let value = document.getElementById("value").value
+        if (isNaN(value)) {
+            document.getElementById("result").innerHTML = "vui long nhập số !"
+            document.getElementById("value").value = ""
+        } else {
+            if (type == "foot") {
+                let meter = value*0.305
+                document.getElementById("result").innerHTML = "Result: " + meter + "m" 
+            } else {
+                let foot = value*3.297
+                document.getElementById("result").innerHTML = "Result: " + foot
+            }
+        }
+    }
+</script>
+</html>
