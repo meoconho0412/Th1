@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class HinhTron {
+            radius
+            color 
+            constructor(radius, color) {
+                this.radius = radius
+                this.color = color
+            }
+            getradius() {
+                return this.radius
+            } 
+            getdientich() {
+                return Math.PI * this.radius * this.radius
+            }
+            
+
+        }
+        let hinhtron = new HinhTron(2)
+        let radius = hinhtron.getradius()
+        let dienTich = hinhtron.getdientich()
+        alert("bán kính là : " + radius + " " + "diện tích là : " + dienTich)
+    </script>
+</body>
+</html>
