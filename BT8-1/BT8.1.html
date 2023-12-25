@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" style="border: 1px solid;" width="800" height="500"></canvas>
+    <p id="result"></p>
+    <p id="result1"></p>
+    <button onclick="drawRect()">Draw</button>
+    <button onclick="display()">Display</button>
+    <button onclick="changeValue()">Change</button>
+</body>
+<script>
+    class Rectangle {
+        width
+        height
+        constructor(width, height) {
+            this.width = width
+            this.height = height
+        }
+        getArea() {
+            return this.width*this.height
+        }
+        getPerimeter() {
+            return (this.width + this.height)*2
+        }
+        draw() {
+            let ctx = document.getElementById("canvas").getContext("2d")
+            ctx.clearRect(0,0,800,500)
+            ctx.fillStyle = "red"
+            ctx.fillRect(50, 50, this.width, this.height)
+        }
+    }
+    let rect = new Rectangle(100, 70)
+
+    function drawRect() {
+        rect.draw()
+    }
+
+    function changeValue() {
+        let width = +prompt("Nhập chiều rộng mới", "")
+        let height = +prompt("Nhập chiều dài mới", "")
+        if (width != "") {
+            rect.width = +width
+        }
+        if (height != "") {
+            rect.height = +height
+        }
+    }
+
+    function display() {
+        document.getElementById("result").innerHTML = 
+        "Diện tích là: " + rect.getArea() + "m2; chu vi là: " + rect.getPerimeter() + "m"
+        document.getElementById("result1").innerHTML = 
+        "Chiều dài là: " + rect.width + "m; chiều rộng là: " + rect.height + "m"
+    }
+</script>
+
+</html>
