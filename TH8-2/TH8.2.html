@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ngaythang {
+            ngay
+            thang
+            nam
+            constructor (ngay, thang, nam) {
+                this.ngay = ngay
+                this.thang = thang
+                this.nam = nam
+            }
+            getngay() {
+                return this.ngay
+            }
+            getthang() {
+                return this.thang
+            }
+            getnam() {
+                return this.nam
+            }
+            setngay(ngay) {
+                this.ngay = ngay
+            }
+            setthang(thang) {
+                this.thang = thang
+            }
+            setnam(nam) {
+                this.nam = nam
+            }
+        }
+        let ngayThang = new ngaythang(2, 2, 2000)
+        let Ngay = ngayThang.getngay()
+        let Thang = ngayThang.getthang()
+        let Nam = ngayThang.getnam()
+        alert("Ngày : " + Ngay + " " + "Tháng :" + Thang + " " + "Năm : " + Nam)
+        ngayThang.setngay(10)
+        ngayThang.setthang(10)
+        ngayThang.setnam(2002)
+
+        Ngay = ngayThang.getngay()
+        Thang = ngayThang.getthang()
+        Nam = ngayThang.getnam()
+
+        console.log("Ngày : " + Ngay + " " + "Tháng :" + Thang + " " + "Năm : " + Nam)
+    </script>
+</body>
+</html>
