@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Temperature {
+        doC 
+        constructor(doC) {
+            this.doC = doC
+        }
+        getdoC() {
+            return this.doC
+        }
+        setdoC(doC) {
+            this.doC = Doc
+        }
+        toFahrenheit() {
+            return (this.doC * 9/5) + 32
+        }
+
+        toKelvin() {
+            return this.doC + 273.15
+        }
+    }
+    let temperature1 = new Temperature(25)
+    let doC = temperature1.getdoC()
+    alert( doC + " độ C")
+    let fahrenheit = temperature1.toFahrenheit()
+    doC = temperature1.toFahrenheit()
+    alert(doC + " độ F" )
+    let kelvin = temperature1.toKelvin()
+    doC = temperature1.toKelvin()
+    alert(doC + " độ K" )
+</script>
+</html>
