@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function isPalindrome(s) {
+    s = s.toLowerCase()
+
+    if (s.length <= 1) {
+        return true
+    }
+
+    if (s[0] !== s[s.length - 1]) {
+        return false
+    }
+
+    return isPalindrome(s.slice(1, -1))
+}
+
+const word = prompt('Nhập một từ để kiểm tra: ')
+const result = isPalindrome(word)
+
+if (result) {
+    console.log(`${word} là một từ đối xứng.`)
+} else {
+    console.log(`${word} không phải là một từ đối xứng.`)
+}
+</script>
+</html>
