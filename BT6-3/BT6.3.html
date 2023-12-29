@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="bai1()">Bài 1</button> <br>
+    <br>
+    <button onclick="bai2()">Bài 2 </button>
+    <p id="result2"></p>
+    <button onclick="bai3()">bài 3 </button>
+    <p id="result3"></p>
+    <button onclick="bai4()">Bài 4 </button>
+    <p id="result4"></p>
+    <button onclick="bai5()">Bài 5 </button>
+    <p id="result5"></p>
+    <button onclick="bai6()">Bài 6 </button>
+    <p id="result6"></p>
+    <button onclick="bai7()">Bài 7 </button>
+    <p id="result7"></p>
+    <button onclick="bai8()"> bài 8</button>
+    <p id="result8"></p>
+    <button onclick="bai9()"> bài 9</button>
+    <p id="result9"></p>
+    <button onclick="bai10()"> bài 10</button>
+    <p id="result10"></p>
+</body>
+<script>
+    function bai1() {
+        let number1 = +prompt("nhập số thứ nhất :")
+        let number2 = +prompt("nhập số thứ hai :")
+        if (number1 < number2) {
+            alert("Số thứ nhất lớn hơn số thứ 2!")
+        } else {
+            alert("tổng của 2 số là: " + number1 + number2)
+        }
+    }
+
+
+    function bai2() {
+        let star = prompt("Nhập tên ngôi sao :")
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"]
+        let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"]
+        let result = "Không tìm thấy"
+        for (i = 0 ; i <arr1.length ; i++ ) {
+            if (arr1[i] === star) {
+                result = arr2[i]
+                break;
+            }
+        }
+        document.getElementById("result2").innerHTML = result
+    }
+
+
+    function bai3() {
+        let number = +prompt("nhập số bất kỳ")
+        document.getElementById("result3").innerHTML = "Bình phương của " + number + "là : " + Math.pow(number, 2)
+    }
+
+    function bai4() {
+        let number = +prompt("Nhập bán kính hình tròn cần tính: ")
+        let peri = number * 2 * Math.PI
+        let area = Math.pow(number, 2) * Math.PI
+        document.getElementById("result4").innerHTML = "Chu vi là: " + peri.toFixed(3) +"m ; diện tích là: " + area.toFixed(3) + "m2"
+    }
+
+
+    function bai5() {
+        let number = +prompt("Nhập 1 số bất kì :")
+        let result = 1
+        for (i = 1 ; i <= number ; i++) {
+            result *= i
+        }
+        document.getElementById("result5").innerHTML = "Giai thừ của " + result + " là " + result
+    }
+
+    function bai6() {
+        let number = +prompt("Nhập ")
+        document.getElementById("result6").innerHTML = !isNaN(number)
+    }
+
+    function bai7() {
+        let number1 = +prompt("nhấp số thứ nhất : ")
+        let number2 = +prompt("nhấp số thứ hai : ")
+        let number3 = +prompt("nhấp số thứ ba : ")
+        let result = ""
+        if (number1 < number2 && number1 < number3 ) {
+            result = number1
+        } else if(number2 < number3 ) {
+            result = number2
+        } else {
+            result = number3 
+        }
+        document.getElementById("result7").innerHTML = "Số nhỏ nhất là : " + result
+    }
+
+    function bai8() {
+        let number = +prompt("Nhập 1 số bất kỳ: ")
+        document.getElementById("result8").innerHTML = (number > 0 ? true : false)
+    }
+
+    function bai9() {
+        let arr = creatArr()
+        let data = "" + arr
+        for (i = 0 ; i < arr.length / 2 ; i ++) {
+            let temp = arr[i]
+            arr[i] = arr[arr.length-1-i]
+            arr[arr.length-1-i] = temp
+        }
+        data += " | " + arr
+        document.getElementById("result9").innerHTML = data
+    }
+
+    function bai10() {
+        let arr = creatArr()
+        console.log(arr);
+        let char = prompt("Nhập ký tự bất kỳ: ")
+        console.log(char);
+        let count = 0
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] == char) {
+                count++
+            }
+        }
+        if (count === 0) {
+            count = -1
+        }
+        document.getElementById("result10").innerHTML = "Số lần xuất hiện của " + char + " là: " + count
+    }
+
+    function creatArr() {
+        let len = +prompt("nhập chiều dài mảng : ")
+        let arr = []
+        for (let i = 0 ; i < len ; i++) {
+            arr[i] = prompt("nhập phần tử" + (i+1))
+        }
+        return arr
+    }
+</script>
+</html>
