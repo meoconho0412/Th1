@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td {
+            border: 0px;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 600px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(247, 247, 240);
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        #demo {
+            text-align: right;
+            color: red;
+        }
+
+        button {
+            background-color: rgb(12, 174, 12);
+            color: white;
+            font-weight: bold;
+            height: 40px;
+            border: white;
+            border-radius: 3px;
+            padding: 12px;
+        }
+
+        input {
+            height: 38px;
+            border: 0.5px solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body onload="display()">
+    <h2>Add New Product</h2>
+    <input type="text" placeholder="New Product" id="add" size="35">
+    <button onclick="add()">Add</button>
+    <h2>Display All Product</h2>
+    <div id="products"></div>
+</body>
+<script>
+    let arr = ["Nokia", "Samsung", "Oppo", "Xiaomi", "Galaxy", "Huewei"]
+    function display() {
+        let data = "<table>"
+        data +=  "<tr style='background-color: white'><td><b>Product Name</b></td><td></td><td id='demo'><b>" + arr.length + " products</b></td>"
+        for(let i = 0 ; i < arr.length ; i++) {
+            data += "<tr>"
+            data += "<td>" + arr[i] + "</td>"
+            data += "<td><button onclick='edit(" + i + ")'>Edit</button></td>"
+            data += "<td><button onclick='deleteP(" + i + ")'>Delete</button></td>"
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("products").innerHTML = data
+    }
+
+    function add() {
+        let product = document.getElementById("add").value 
+        arr.push(product)
+        document.getElementById("add").value = ""
+        display()
+    }
+
+    function deleteP(index) {
+        arr.splice(index, 1)
+        display()
+    }
+
+    function edit(index) {
+        let product = prompt("Nhập tên mới sản phẩm: ", "")
+        if (product != "") {
+            arr[index] = product
+        }
+        display()
+    }
+</script>
+</html>
