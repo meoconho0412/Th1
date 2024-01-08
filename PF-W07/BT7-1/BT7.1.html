@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập số</p>
+    <input type="text" id="demo"> 
+    <button onclick="b1()">Kiểm tra</button>
+</body>
+<script>
+
+    function b1() {
+        let number = document.getElementById("demo").value
+        if (number % 2 === 0 ) {
+            alert(number+ " là số chãn :")
+        }
+    }
+</script>
+</html>

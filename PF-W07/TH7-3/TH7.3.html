@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas 
+        style="border: 1px solid;"
+        width="800"
+        height="500"
+        id="canvas"
+        >
+    </canvas><br>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    let canvas = document.getElementById("canvas")
+    let ctx = canvas.getContext("2d")
+
+    let number = 0
+    function m1() {
+        number += 5
+        console.log(number);
+    }
+
+    let test
+    function start() {
+        // 1000ms <=> 1s
+        test = setInterval(draw, 20)
+    }
+
+    function stop() {
+        clearInterval(test)
+    }
+
+    let x1 = 100
+    let x2 = 300
+    let y1 = 50
+    let y2 = 50
+    let speed1 = 2
+    let speed2 = 3
+    let check = false 
+    function draw() {
+        ctx.clearRect(0,0,800,500)
+        if (check) {
+            moveRight()
+        } else {
+             move()
+        }
+        // console.log(check);
+        ctx.fillStyle = "red"
+        ctx.fillRect(x1, y1, 100, 70)
+        // ctx.fillStyle = "blue"
+        // ctx.fillRect(x2, y2, 100, 70)
+    }
+
+    function move() {
+        y1 += speed1
+        if (y1 > 400 || y1 < 50) {
+            speed1 = -speed1
+        }
+        y2 += speed2
+        if (y2 > 400 || y2 < 50) {
+            speed2 = -speed2
+        }
+    }
+
+    function moveRight() {
+        x1 += speed1
+        if (x1 > 500 || x1 < 50) {
+            speed1 = -speed1
+        }
+    }
+
+    function moveSelect(e) {
+        if (e.keyCode === 39) {
+            check = true
+        } else if (e.keyCode === 38) {
+            check = false
+        }
+    }
+
+    window.addEventListener("keydown", moveSelect)
+</script>
+</html>
