@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Battery {
+    energy
+
+    constructor(energy) {
+        this.energy = energy
+    }
+
+    getEnergy() {
+        return this.energy
+    }
+
+    setEnergy(energy) {
+        this.energy = energy
+    }
+
+    decreaseEnergy() {
+        if (this.energy > 0) {
+            this.energy--
+        } else {
+            console.log("Hết pin rồi");
+        }
+    }
+}
+</script>
+
+<script>
+class FlashLamp {
+    status
+    battery
+
+    constructor(status, battery) {
+        this.status = status
+        this.battery = battery
+    }
+
+    setBattery(battery) {
+        if (this.battery != undefined) {
+            console.log("Đã có pin!");
+        } else {
+            this.battery = battery
+        }
+    }
+
+    getBatteryInfo() {
+        if (this.battery != undefined) {
+            console.log(this.battery.getEnergy());
+        } else {
+            console.log("Lắp pin trước!");
+        }  
+    }
+
+    light() {
+        if (this.status) {
+            console.log("Đèn đang sáng");
+        } else {
+            console.log("Đèn đang tắt");
+        }
+    }
+
+    turnOn() {
+        if (this.battery != undefined) {
+            this.status = true
+            this.battery.decreaseEnergy()
+        } 
+    }
+
+    turnOff() {
+        this.status = false
+    }
+}
+</script>
+
+<script>
+    let battery = new Battery(5)
+    let battery1 = new Battery(5)
+    let flashlamp = new FlashLamp(false, undefined)
+</script>
+</html>
+</body>
+</html>
